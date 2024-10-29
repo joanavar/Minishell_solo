@@ -6,13 +6,13 @@
 /*   By: joanavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:54:07 by joanavar          #+#    #+#             */
-/*   Updated: 2024/10/29 19:40:26 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/10/29 19:59:58 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	*lectur_token(char *str)
+void	lectur_token(char *str)
 {
 	t_token *token;
 
@@ -28,10 +28,10 @@ int	*lectur_token(char *str)
 	else if (str[0] == "|")
 		token->type = 4;
 	else
-		lectur_token2(str);
-	return (0);
+		lectur_token2(str);:wq
+
 }
-void lectur_token2(char *str)
+void	lectur_token2(char *str)
 {
 	t_token	*token;
 
@@ -54,5 +54,9 @@ void	lectur_imput(char *str)
 	int i;
 
 	i = 0;
+	while (str[i])
+	{
+
+	}
 
 }
