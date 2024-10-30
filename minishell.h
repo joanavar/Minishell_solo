@@ -6,7 +6,7 @@
 /*   By: joanavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:25:14 by joanavar          #+#    #+#             */
-/*   Updated: 2024/10/29 17:31:43 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:59:00 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef MINISHELL_H
@@ -66,7 +66,7 @@ typedef struct s_token
 {
 	char			*content;
 	int				type;
-	int				expanded;
+	//int				expanded;
 	struct s_token	*next;
 	struct s_token	*prev;
 }	t_token;
