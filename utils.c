@@ -1,10 +1,18 @@
 #include "minishell.h"
 
-void	lectur_token(char *str)
+void	get_token(char *str, t_token **stack)
 {
 	t_token *token;
-
+	
 	token->content = str;
+	get_type_token(str, token);
+	stack_token(token, stack);
+	
+
+
+}
+void	get_type_token(char *str, token)
+{
 	if (str[0] == ' ')
 		token->type = 0;
 	else if (str[0] == is_alpha(str))// hacer is_alpha en utilsc o cojer de libft;
@@ -15,15 +23,7 @@ void	lectur_token(char *str)
 		token->type == 3;
 	else if (str[0] == "|")
 		token->type = 4;
-	else
-		lectur_token2(str);
-
-}
-void	lectur_token2(char *str)
-{
-	t_token	*token;
-
-	if (str[0] == "<")
+	else if (str[0] == "<")
 	{
 		token->type = 8;
 		if (str[1] == "<")
@@ -37,17 +37,19 @@ void	lectur_token2(char *str)
 	}	
 }
 
-void    is_caracter_token(char c)
+void    is_caracter_token(char c, t_token **stack)
 {
     char *token;
 
     token = malloc(sizeof(char *) * 2);
+	if (!token)
+		return ;
     token[0] = c;
     token[1] = '\0';
-    lectur_token(token);
+    get_token(token);
 }
 
-void    is_redireccion(char *str, int i)
+void    is_redireccion(char *str, int i, t_token **stack)
 {
     char *token;
     int j;
@@ -61,10 +63,11 @@ void    is_redireccion(char *str, int i)
         i++;
     }
     token[j] = '\0';
-    lectur_token(token);
+
+    get_token(token);
 }
 
-void    is_string(char *str, int i)
+void    is_string(char *str, int i, t_token **stack)
 {
     char *token;
     int j;
@@ -84,5 +87,5 @@ void    is_string(char *str, int i)
             str[j] != '<' || str[j] != '>')
         token[j++] = str[i++];
     Token[j] = '\0';
-    lectur_token(token);
+    get_token(token);
 }
