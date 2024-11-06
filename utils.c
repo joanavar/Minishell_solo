@@ -67,7 +67,7 @@ void    is_redireccion(char *str, int i, t_token **stack)
     get_token(token);
 }
 
-void    is_string(char *str, int i, t_token **stack)
+int    is_word(char *str, int i, t_token **stack)
 {
     char *token;
     int j;
@@ -75,17 +75,16 @@ void    is_string(char *str, int i, t_token **stack)
 
     j = i;
     count = 0;
-    while (str[j] != ' ' || str[j] != '|' ||
-            str[j] != '<' || str[j] != '>')
+    while (!is_command(str[j]))
     {
         count++;
         j++;
     }
     j = 0;
     token = malloc(sizeof(char *) * (count + 1));
-    while (str[j] != ' ' || str[j] != '|' ||
-            str[j] != '<' || str[j] != '>')
+    while (!is_command(str[j]))
         token[j++] = str[i++];
     Token[j] = '\0';
     get_token(token);
+	return (i--);
 }

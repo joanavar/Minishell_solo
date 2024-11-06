@@ -6,7 +6,7 @@
 /*   By: joanavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:54:07 by joanavar          #+#    #+#             */
-/*   Updated: 2024/11/05 18:42:29 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:33:04 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,9 @@ void	lectur_imput(char *str)
 				 is_caracter_token(str[i], stack);
 		}
 		else 
-			while ()
-			tengo que guardar en una string hasta que se encuentre algo de arriba;
+			is_string(str, i, stack);
 		i++;
 	}
-
-
 }
 
 void	stack_token(t_token *token, t_token **stack)
@@ -71,5 +68,4 @@ void	stack_token(t_token *token, t_token **stack)
 	last_token = find_last(*stack);
 	last_token->next = token;
 	token->prev = last_token;
-
 }
