@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   paquito.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joanavar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:25:14 by joanavar          #+#    #+#             */
-/*   Updated: 2024/10/30 10:59:00 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/11/26 16:43:42 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef MINISHELL_H
+#ifndef PAQUITO_H
+# define PAQUITO_H
 
 # include <stdio.h> //printf-perror
 # include <stdlib.h> //malloc-free-getenv
@@ -48,7 +49,7 @@
 # define BOLD_WHITE  "\033[1m\033[37m"
 
 # define SPACES		0 // 0 = ESPACIOS
-# define STRING		1 // 1 = STRING SIN COMILLAS
+# define STRING 	1  // 1 = STRING SIN COMILLAS
 # define STRINGCS	2 // 2 = STRING CON COMILLAS SIMPLES
 # define STRINGCD	3 // 3 = STRING CON COMILLAS DOBLES
 # define PIPE 		4 //  = PIPE |
@@ -70,3 +71,25 @@ typedef struct s_token
 	struct s_token	*next;
 	struct s_token	*prev;
 }	t_token;
+
+
+
+//lectur.c
+t_token	*lectur_imput(char *str);
+
+//token.c
+void	get_token(char *str, t_token **stack);
+t_token	*find_last(t_token *stack);
+//string.c
+int		is_string(char *str, int i, t_token **stack);
+//remove_quotes.c
+void	remove_quotes(t_token *stack);
+int		string_type(t_token *token);
+//utils.c
+int		ft_strcmp(const char *src, char *s);
+void	print_token(t_token *stack);
+//syntax_error.c
+int		syntax_error(t_token **stack);
+int		redir_type(t_token *token);
+
+#endif
