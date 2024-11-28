@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:25:14 by joanavar          #+#    #+#             */
-/*   Updated: 2024/11/26 16:43:42 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:39:53 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PAQUITO_H
@@ -25,7 +25,7 @@
 # include <readline/history.h> //add_history
 # include <curses.h> //tgetent-tputs
 # include <term.h> //tgoto-tgetent
-# include "../Libreries/Libft/libft.h"
+//# include "../Libreries/Libft/libft.h"
 
 #define DELIM		" \t\r\n\a"
 
