@@ -6,26 +6,57 @@
 /*   By: joanavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:17:46 by joanavar          #+#    #+#             */
-/*   Updated: 2024/12/02 18:29:18 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/12/02 19:47:21 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "paquito.h"
 
+int close_expansor(t_token *token, int i)
+{
+	if (token->content[i] >= 'a' && 
+			token->content[i] <= 'z')
+		return (1);
+	else if (token->content[i] >= 'A' && 
+			token->content[i] <= 'Z')
+		return (1);
+	else if (token->content[i] == '_')
+		return (1);
+	else if (token->content[i] >= '0' && 
+			token->content[i] <= '9')
+		return (1);
+	return (0);
+
+}
 int correct_expansor(t_token *token, int i)
 {
 	if (token->content[i] >= 'a' && 
 			token->content[i] <= 'z')
 		return (1);
-	else if (token->content[i] >= 'a' && 
-			token->content[i] <= 'z')
+	else if (token->content[i] >= 'A' && 
+			token->content[i] <= 'Z')
 		return (1);
+	else if (token->content[i] == '_')
+		return (1);
+	return (0);
 
 }
 void $(t_token *token, int i)
 {
+	char * str;
+	int j;
+	int len;
+
 	i++;
-	if (token->content[i])
+	j = i;
+	if (correct_expansor(token, i))
+	{
+		while (correct_expansor(token, i))
+			i++;
+		len = i - j;
+		str = ft_substr(token->content, j, len);
+
+	}
 }
 static void	expansor(t_token *token)
 {
