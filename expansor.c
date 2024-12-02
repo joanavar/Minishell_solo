@@ -6,12 +6,27 @@
 /*   By: joanavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:17:46 by joanavar          #+#    #+#             */
-/*   Updated: 2024/12/02 17:44:44 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:29:18 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "paquito.h"
 
+int correct_expansor(t_token *token, int i)
+{
+	if (token->content[i] >= 'a' && 
+			token->content[i] <= 'z')
+		return (1);
+	else if (token->content[i] >= 'a' && 
+			token->content[i] <= 'z')
+		return (1);
+
+}
+void $(t_token *token, int i)
+{
+	i++;
+	if (token->content[i])
+}
 static void	expansor(t_token *token)
 {
 	int i;
