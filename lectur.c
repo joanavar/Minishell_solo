@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:54:07 by joanavar          #+#    #+#             */
-/*   Updated: 2024/11/28 14:10:14 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:22:48 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ t_token	*lectur_imput(char *str)
 	if (syntax_error(&stack))
 		return NULL;
 	return (stack);
+
 	/*for (t_token *tmp = *stack; tmp; tmp = tmp->next)
 		printf("<%s>\n", tmp->content);*/
 	//remove_quotes(*stack);
