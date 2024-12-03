@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 16:45:08 by joanavar          #+#    #+#             */
-/*   Updated: 2024/11/26 16:41:35 by joanavar         ###   ########.fr       */
+/*   Created: 2024/03/08 13:44:52 by camurill          #+#    #+#             */
+/*   Updated: 2024/03/08 14:12:39 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "../inc/minishell.h"
-#include "paquito.h"
+#include "libft.h"
 
-int ft_strcmp(const char *src, char *s)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	int i;
-
-	i = 0;
-	while (src[i] == s[i])
-		i++;
-	if (src[i] == '\0' && s[i] == '\0')
-		return (0);
-	return (1);
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }
-
-

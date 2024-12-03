@@ -6,12 +6,12 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:42:41 by joanavar          #+#    #+#             */
-/*   Updated: 2024/11/26 16:42:04 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/12/03 16:54:57 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "../inc/minishell.h"
-#include "paquito.h"
+#include "../inc/minishell.h"
+//#include "paquito.h"
 
 static int is_command(char c)
 {

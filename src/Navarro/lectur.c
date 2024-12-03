@@ -6,14 +6,14 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:54:07 by joanavar          #+#    #+#             */
-/*   Updated: 2024/12/02 16:22:48 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/12/03 16:53:10 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <readline/readline.h>
 #include <readline/history.h>
-//#include "../inc/minishell.h"
-#include "paquito.h"
+#include "../inc/minishell.h"
+//#include "paquito.h"
 
 static void    is_caracter_token(char c, t_token **stack)
 {

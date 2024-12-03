@@ -6,11 +6,12 @@
 /*   By: joanavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:17:46 by joanavar          #+#    #+#             */
-/*   Updated: 2024/12/02 19:47:21 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/12/03 16:53:57 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "paquito.h"
+#include "../inc/minishell.h"
+//#include "paquito.h"
 
 int close_expansor(t_token *token, int i)
 {
