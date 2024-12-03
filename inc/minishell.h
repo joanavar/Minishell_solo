@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 18:30:01 by camurill          #+#    #+#             */
-/*   Updated: 2024/12/03 17:05:34 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/12/03 18:16:20 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ typedef struct s_shell
 	char	**arg;
 	char	**env;
 	char	**aux_env; //quitar
-	t_token	eco_token;
+	t_token	*eco_token;
 }			t_shell;
 
 /***FUNTIONS***/

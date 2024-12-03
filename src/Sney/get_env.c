@@ -6,11 +6,11 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 20:43:52 by camurill          #+#    #+#             */
-/*   Updated: 2024/11/09 14:10:15 by camurill         ###   ########.fr       */
+/*   Updated: 2024/12/03 20:02:22 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
 void	get_env(t_shell **shell, char **env)
 {

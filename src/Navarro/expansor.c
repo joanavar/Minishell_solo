@@ -6,11 +6,11 @@
 /*   By: joanavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:17:46 by joanavar          #+#    #+#             */
-/*   Updated: 2024/12/03 16:53:57 by joanavar         ###   ########.fr       */
+/*   Updated: 2024/12/03 20:00:01 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 //#include "paquito.h"
 
 int close_expansor(t_token *token, int i)
@@ -80,7 +80,7 @@ void	expandir(t_token **stack)
 	while (tmp)
 	{
 		if (tmp->type == 1 || tmp->type == 3)
-			expansor(tmp)
+			expansor(tmp);
 		tmp = tmp->next;
 	}
 }

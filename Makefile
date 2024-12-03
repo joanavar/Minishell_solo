@@ -6,7 +6,6 @@ RM 			= 		rm -rf
 INCLUDE		=		inc/minishell.h
 OBJS		= 		obj/
 SRC_DIR		=		src/
-#SRC_DIR_SNY	=		Sney/
 LIBFT		=		Libreries/Libft
 LIBFT_A   =		Libreries/Libft/libft.a
 
@@ -15,7 +14,7 @@ LIBFT_A   =		Libreries/Libft/libft.a
 #								COMPILER	  								  #
 ###############################################################################
 
-CC 			= 		gcc
+CC 			= 		cc
 CCFLAGS		= 		-g #-fsanitize=address-Wall -Wextra -Werror -fsanitize=address
 READLINE	=		-lreadline
 
@@ -23,27 +22,35 @@ READLINE	=		-lreadline
 #									SRC    									  #
 ###############################################################################
 
-SRC 		= 		$(SRC_DIR_SNY)main.c\
-					$(SRC_DIR_SNY)parssing.c\
-					$(SRC_DIR_SNY)start_shell.c\
-					$(SRC_DIR_SNY)get_env.c\
-					$(SRC_DIR_SNY)signal.c\
-					$(SRC_DIR_SNY)built_ins.c\
-					$(SRC_DIR_SNY)built_ins_aux.c\
-					$(SRC_DIR_SNY)lectur.c\
-					$(SRC_DIR_NAV)token.c\
-					$(SRC_DIR_NAV)string.c\
-					$(SRC_DIR_NAV)remove_quotes.c\
-					$(SRC_DIR_NAV)utils.c\
-					$(SRC_DIR_NAV)syntax_error.c\
-					$(SRC_DIR_NAV)expansor.c\
+SRC_DIR_SNY		=	sney/main.c\
+					sney/parssing.c\
+					sney/start_shell.c\
+					sney/set_env.c\
+					sney/signal.c\
+					sney/built_ins.c\
+					sney/built_ins_aux.c
+
+SRC_DIR_NAV		=	Navarro/lectur.c\
+					Navarro/token.c\
+					Navarro/string.c\
+					Navarro/remove_quotes.c\
+					Navarro/utils.c\
+					Navarro/syntax_error.c\
+					Navarro/expansor.c
 
 
 ###############################################################################
 #									OBJ_DIR	   								  #
 ###############################################################################
 
-OBJ_DIR = $(patsubst $(SRC_DIR_SNY)%.c, $(OBJS)%.o, $(SRC))
+SRCS			= $(SRC_DIR_NAV) $(SRC_DIR_SNY)
+
+ OBJ_DIR =	$(addprefix $(OBJS), ${SRCS:.c=.o})
+
+#OBJ_DIR =	$(patsubst $(SRC_DIR_NAV)%.c, $(OBJS)%.o, $(SRC))\
+			$(patsubst $(SRC_DIR_SNY)%.c, $(OBJS)%.o, $(SRC))
+
+
 
 ###############################################################################
 #								RULES	      								  #
@@ -59,10 +66,10 @@ $(NAME):: $(OBJ_DIR) $(LIBFT)
 $(NAME)::
 	@echo "Minishell is alived"
 
-$(OBJS)%.o: $(SRC_DIR_SNY)%.c Makefile $(INCLUDE)
+$(OBJS)%.o: $(SRCS) Makefile $(INCLUDE)
 	@echo "Compiling..."
 	@mkdir -p $(OBJS)
-	@$(CC) $(CCFLAGS) -c $< -o $@
+	@$(CC) $(CCFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 	@make -C $(LIBFT) fclean --no-print-directory
