@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   start_shell.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 16:45:08 by joanavar          #+#    #+#             */
-/*   Updated: 2024/12/03 20:01:26 by joanavar         ###   ########.fr       */
+/*   Created: 2024/08/06 22:48:04 by camurill          #+#    #+#             */
+/*   Updated: 2024/12/03 20:03:29 by joanavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/minishell.h"
-//#include "paquito.h"
+#include "../inc/minishell.h"
 
-int ft_strcmp(const char *src, char *s)
+int	start_shell(t_shell *shell)
 {
-	int i;
-
-	i = 0;
-	while (src[i] == s[i])
-		i++;
-	if (src[i] == '\0' && s[i] == '\0')
-		return (0);
-	return (1);
+	if (parssing(&shell) == -1)
+		return (-1);
+	//shell->arg = ft_split(shell->prompt, ' ');
+	shell->eco_token = lectur_imput(shell->prompt);
+	return (0);
 }
-
-

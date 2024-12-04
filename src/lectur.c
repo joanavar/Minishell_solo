@@ -12,7 +12,7 @@
 
 #include <readline/readline.h>
 #include <readline/history.h>
-#include "../../inc/minishell.h"
+#include "../inc/minishell.h"
 //#include "paquito.h"
 
 static void    is_caracter_token(char c, t_token **stack)

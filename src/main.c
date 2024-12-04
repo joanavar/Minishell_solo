@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/minishell.h"
+#include "../inc/minishell.h"
 
 volatile sig_atomic_t	g_signal_received = 0;
 
@@ -87,8 +87,8 @@ int	main(int ac, char **ag, char **env)
 		}
 		if (start_shell(shell) == -1)
 			error_message("Write a double \" o \'", NO_CLOSE);
-		if (built_ins(shell) == -1)
-			break ;
+		//if (built_ins(shell) == -1)
+		//	break ;
 		add_history(shell->prompt);
 		free(shell->prompt);
 	}
